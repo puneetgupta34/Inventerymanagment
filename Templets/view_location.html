@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block content %}
+{% if items_list %}
+
+
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Location_id</th>
+        <th scope="col">Address</th>
+        <th scope="col">Product</th>
+        <th scope="col">Quantity</th>
+      </tr>
+    </thead>
+    
+{% for location in items_list %}
+    <tbody>
+      <tr>
+        <th scope="row">{{location.Location_id}}</th>
+        <td>{{location.Address}}</td>
+        <td>{{location.Product}}</td>
+        <td>{{location.Quantity}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+
+
+
+
+
+
+
+
+
+
+
+{% for location in items_list %}
+                        
+                                <h1 >{{location.Location_id}}</h1>
+                                <p >{{location.Address}}</p>
+                                
+                           
+                        {% endfor %}
+
+
+
+                        {% else %}
+                        <p>No details are available.</p>
+                        {% endif %}
+{% endblock %}

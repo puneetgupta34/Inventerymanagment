@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+{% if items_list %}
+
+
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Product_id</th>
+        <th scope="col">Quantity</th>
+      </tr>
+    </thead>
+    
+{% for Product in items_list %}
+    <tbody>
+      <tr>
+        <th scope="row">{{Product.Product_id}}</th>
+        <td>{{Product.Quantity}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+
+
+
+
+
+
+
+
+
+
+
+                        {% else %}
+                        <p>No details are available.</p>
+                        {% endif %}
+{% endblock %}
